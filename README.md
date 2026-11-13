@@ -45,4 +45,4 @@ Ouvrir `index.html` dans un navigateur, ou lancer un petit serveur :
 python -m http.server 8000
 ```
 
-puis aller sur http://localhost:8000. Les fonds de carte OpenStreetMap peuvent ne pas s'afficher quand on ouvre le fichier directement (`file://`). Ils s'affichent une fois le site servi en http(s).
+puis aller sur http://localhost:8000.
