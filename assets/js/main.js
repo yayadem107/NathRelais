@@ -97,7 +97,16 @@
           throw new Error(r.json && r.json.message ? r.json.message : "Erreur d'envoi");
         }
       })
-      .catch(function () {
+      .catch(function (err) {
+        var msg = (err && err.message) || "";
+        if (/activat/i.test(msg)) {
+          showStatus("err", "Le formulaire est en cours d'activation : un email de confirmation (« Activate Form ») a été envoyé à contact.nathrelais@gmail.com. Une fois le lien cliqué, les messages seront transmis normalement.");
+          return;
+        }
+        if (/web server/i.test(msg) || window.location.protocol === "file:") {
+          showStatus("err", "Le formulaire ne fonctionne qu'une fois le site en ligne (pas en ouvrant le fichier sur l'ordinateur).");
+          return;
+        }
         showStatus("err", "L'envoi n'a pas pu aboutir. Vous pouvez m'écrire directement à contact.nathrelais@gmail.com ou m'appeler au 07 62 34 39 88.");
       })
       .then(function () {
