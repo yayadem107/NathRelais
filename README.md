@@ -17,17 +17,12 @@ Les styles communs sont dans `assets/css/style.css` (couleurs dans `:root`), les
 
 ## Formulaire de contact (envoi par email)
 
-Le formulaire envoie les messages à **contact.nathrelais@gmail.com** via [FormSubmit](https://formsubmit.co) (gratuit, sans serveur).
+Les messages sont envoyés à **contact.nathrelais@gmail.com** :
 
-**Activation (une seule fois) :**
-1. Mettre le site en ligne.
-2. Envoyer un premier message de test depuis la page Contact.
-3. FormSubmit envoie un email « Confirm your email » à contact.nathrelais@gmail.com : cliquer sur le lien d'activation.
-4. Les messages suivants arrivent directement dans la boîte mail.
+1. **`send.php`** (prioritaire) : petit script PHP qui utilise `mail()` de l'hébergement (Hostinger). Rien à configurer, il doit juste être dans le même dossier que `contact.html`. Pour changer l'adresse de réception, modifier `$destinataire` en haut du fichier.
+2. **FormSubmit** (secours, si PHP n'est pas disponible) : nécessite d'avoir cliqué une fois sur le lien « Activate Form » reçu sur contact.nathrelais@gmail.com.
 
-Optionnel : après l'activation, FormSubmit fournit un identifiant aléatoire. On peut le mettre à la place de l'adresse dans l'attribut `data-endpoint` du formulaire (`contact.html`) pour ne plus faire apparaître l'email dans le code.
-
-Pour changer l'adresse de réception, modifier `data-endpoint` dans `contact.html`.
+Pensez à vérifier le dossier Spam lors des premiers envois.
 
 ## Mise en ligne avec GitHub Pages
 

@@ -83,19 +83,27 @@
     button.textContent = "Envoi en cours…";
     status.className = "form-status";
 
-    fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(data)
-    })
-      .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
-      .then(function (r) {
-        if (r.ok && String(r.json.success) === "true") {
-          form.reset();
-          showStatus("ok", "Merci ! Votre demande a bien été envoyée. Je vous réponds sous 48 heures ouvrées.");
-        } else {
+    function post(url) {
+      return fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+        .then(function (r) {
+          if (r.ok && String(r.json.success) === "true") return true;
           throw new Error(r.json && r.json.message ? r.json.message : "Erreur d'envoi");
-        }
+        });
+    }
+
+    // 1) script PHP de l'hébergement (send.php) ; 2) secours : FormSubmit
+    var local = form.getAttribute("data-local-endpoint");
+    var first = local ? post(local) : Promise.reject(new Error("no local"));
+    first
+      .catch(function () { return post(endpoint); })
+      .then(function () {
+        form.reset();
+        showStatus("ok", "Merci ! Votre demande a bien été envoyée. Je vous réponds sous 48 heures ouvrées.");
       })
       .catch(function (err) {
         var msg = (err && err.message) || "";
