@@ -8,9 +8,11 @@
   --navy-2: #1e3a6e;
   --blue: #2c5395;
   --blue-soft: #5b7bb0;
-  --gold: #b88a4a;
-  --gold-2: #c9a46a;
-  --gold-light: #e6cfa3;
+  --gold: #b98a22;
+  --gold-2: #d4a53a;
+  --gold-light: #eed38c;
+  --gold-metal: linear-gradient(105deg, #b8862a 0%, #e9c46a 42%, #d4a53a 66%, #b8862a 100%);
+  --gold-metal-light: linear-gradient(105deg, #e2b85a 0%, #f6e3a6 45%, #e9c46a 70%, #d4a53a 100%);
   --beige: #f3eadc;
   --beige-2: #ece0cc;
   --cream: #fbf7f0;
@@ -103,10 +105,10 @@ p { margin: 0 0 1em; }
 .btn-primary { background: var(--navy-2); color: #fff; }
 .btn-primary:hover { background: var(--navy); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow); }
 .btn-gold { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #fff; }
-.btn-gold:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(184,138,74,.35); }
+.btn-gold:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(185,138,34,.35); }
 .btn-outline { border-color: var(--navy-2); color: var(--navy-2); background: transparent; }
 .btn-outline:hover { background: var(--navy-2); color: #fff; }
-.btn-light { border-color: rgba(230,207,163,.6); color: var(--gold-light); background: transparent; }
+.btn-light { border-color: rgba(238,211,140,.6); color: var(--gold-light); background: transparent; }
 .btn-light:hover { background: var(--gold-light); color: var(--navy); }
 
 .icon-box {
@@ -217,18 +219,18 @@ p { margin: 0 0 1em; }
 }
 .hero-grid {
   display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center;
-  min-height: 640px; padding: 70px 0 80px;
+  min-height: 640px; padding-top: 70px; padding-bottom: 80px;
 }
 .hero-title {
   font-family: var(--font-title); font-weight: 600; color: var(--navy);
-  font-size: clamp(2.3rem, 4.4vw, 3.6rem); line-height: 1.08; margin: 0 0 18px;
+  font-size: clamp(2rem, 3.3vw, 2.85rem); line-height: 1.12; margin: 0 0 18px;
   letter-spacing: -.01em;
 }
 .hero-title em { font-style: italic; color: var(--gold); font-weight: 500; }
 .hero-sub {
   font-size: clamp(1.15rem, 1.8vw, 1.35rem); color: var(--navy-2); font-weight: 500; margin: 0 0 14px;
 }
-.hero-lead { max-width: 560px; color: var(--muted); font-size: 1.02rem; }
+.hero-lead { max-width: 580px; color: var(--text); font-size: 1.08rem; line-height: 1.7; }
 .hero-lead strong { color: var(--navy); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
 
@@ -427,11 +429,11 @@ p { margin: 0 0 1em; }
 }
 .contact-hero::before {
   content: ""; position: absolute; right: -200px; top: -200px; width: 640px; height: 640px;
-  border-radius: 50%; border: 1px solid rgba(201,164,106,.45);
+  border-radius: 50%; border: 1px solid rgba(212,165,58,.45);
 }
 .contact-hero::after {
   content: ""; position: absolute; left: -160px; bottom: -260px; width: 560px; height: 560px;
-  border-radius: 50%; border: 1px solid rgba(201,164,106,.25);
+  border-radius: 50%; border: 1px solid rgba(212,165,58,.25);
 }
 .contact-hero .container { position: relative; z-index: 1; }
 .contact-brand { text-align: center; margin-bottom: 50px; }
@@ -457,7 +459,7 @@ p { margin: 0 0 1em; }
 .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
 .contact-list li { display: flex; align-items: center; gap: 16px; }
 .contact-list .ic {
-  width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(201,164,106,.6);
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(212,165,58,.6);
   display: grid; place-items: center; color: var(--gold-light); flex-shrink: 0;
 }
 .contact-list .ic svg { width: 20px; height: 20px; }
@@ -515,7 +517,7 @@ p { margin: 0 0 1em; }
 }
 .field textarea { min-height: 150px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus {
-  outline: none; border-color: var(--gold-2); background: #fff; box-shadow: 0 0 0 4px rgba(201,164,106,.18);
+  outline: none; border-color: var(--gold-2); background: #fff; box-shadow: 0 0 0 4px rgba(212,165,58,.18);
 }
 .field input:user-invalid, .field textarea:user-invalid, .field select:user-invalid { border-color: #c0563c; }
 .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .82rem; color: var(--muted); margin: 4px 0 20px; }
@@ -550,7 +552,7 @@ p { margin: 0 0 1em; }
 }
 .site-footer::before {
   content: ""; position: absolute; right: -180px; top: -220px; width: 520px; height: 520px;
-  border-radius: 50%; border: 1px solid rgba(201,164,106,.3);
+  border-radius: 50%; border: 1px solid rgba(212,165,58,.3);
 }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 50px; position: relative; }
 .footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
@@ -599,10 +601,9 @@ p { margin: 0 0 1em; }
   .main-nav a[aria-current="page"]::after { display: none; }
   .main-nav .nav-cta { margin: 14px 0 0; text-align: center; border-radius: 999px; border: 0; }
 
-  .hero-grid { grid-template-columns: 1fr; min-height: 0; padding: 50px 0 0; }
-  .hero-visual { min-height: 600px; }
+  .hero-grid { grid-template-columns: 1fr; min-height: 0; padding-top: 50px; padding-bottom: 0; }
   .hero-text { padding-top: 20px; }
-  .hero-visual { min-height: 460px; margin: 0 -24px; }
+  .hero-visual { min-height: 580px; margin: 0 -24px; }
   .hero-visual .wave, .hero-visual .wave-line { inset: 40px -20px -40px -20px; border-radius: 50% 50% 0 0 / 30% 30% 0 0; }
   .hero-visual .wave-line { inset: 20px -10px -40px -10px; border-right: 1px solid var(--gold-2); }
   .hero-visual figure { transform: translate(-50%, -50%); }
@@ -642,4 +643,326 @@ p { margin: 0 0 1em; }
   .map-card iframe { height: 260px; }
   .hero-visual { margin: 0 -16px; }
   .cabinet-card, .volume-card { padding: 34px 22px 24px; }
+}
+
+/* =========================================================
+   Retouches client — novembre 2026
+   ========================================================= */
+:root {
+  --font-brand: "Playfair Display", Georgia, serif;
+  --blue-light: #a9c1ea;
+}
+body { font-variant-numeric: lining-nums; }
+
+/* Nom « Nath'Relais » uniforme : Nath' en bleu, Relais en or */
+.brand-name,
+.nr,
+.contact-brand .wordmark {
+  font-family: var(--font-brand);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.brand-name { font-size: 1.7rem; color: var(--navy-2); }
+.brand-name span { color: var(--gold); }
+.nr { color: var(--navy-2); white-space: nowrap; font-size: 1.04em; }
+.nr span { color: var(--gold); }
+.eyebrow .nr { font-size: 1.25em; }
+.site-footer .brand-name,
+.site-footer .nr,
+.contact-hero .nr,
+.cta-band .nr { color: var(--blue-light); }
+.site-footer .brand-name span,
+.site-footer .nr span,
+.contact-hero .nr span,
+.cta-band .nr span { color: var(--gold-light); }
+.contact-brand .wordmark .nr { font-size: 1em; }
+
+/* Chiffres clés : police lisible et identique */
+.stat strong,
+.hero-badge strong {
+  font-family: var(--font-brand);
+  font-style: italic;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+}
+.stat strong { font-size: 2.6rem; color: var(--navy-2); }
+.hero-badge strong { font-size: 1.55rem; color: var(--navy-2); }
+
+/* Accueil — « Pour qui ? » */
+.section-head.wide { max-width: none; }
+.section-head .one-line { color: var(--blue); }
+@media (min-width: 1000px) {
+  .section-head .one-line { white-space: nowrap; font-size: 2.45rem; }
+  .section-head .one-line-sub { white-space: nowrap; }
+}
+
+/* FAQ */
+.faq-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: start; }
+.faq-photo { position: relative; margin: 28px 0 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+.faq-photo img { width: 100%; height: 300px; object-fit: cover; }
+.faq-photo figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px;
+  background: linear-gradient(transparent, rgba(20, 40, 77, .75));
+  color: #fff; font-weight: 600; font-size: .95rem;
+}
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: 20px 40px 20px 0; position: relative;
+  font-family: var(--font-title); font-size: 1.3rem; font-weight: 600; color: var(--navy);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gold-2);
+  display: grid; place-items: center; color: var(--gold); font-family: var(--font-body); font-size: 1.1rem; line-height: 1;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item summary:hover { color: var(--gold); }
+.faq-item p { color: var(--muted); margin: -4px 0 20px; padding-right: 30px; }
+
+/* Témoignages (section prête, commentée dans index.html) */
+.testimonial { margin: 0; display: flex; flex-direction: column; }
+.testimonial .quote-mark { font-family: var(--font-brand); font-size: 3rem; line-height: .8; color: var(--gold-2); }
+.testimonial blockquote { margin: 10px 0 24px; flex: 1; color: var(--text); font-size: 1rem; line-height: 1.7; }
+.testimonial figcaption { display: flex; align-items: center; gap: 14px; }
+.testimonial .avatar {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; object-fit: cover;
+  display: grid; place-items: center; background: var(--beige); border: 1px solid var(--gold-light);
+  font-family: var(--font-brand); font-style: italic; font-weight: 600; color: var(--navy-2);
+}
+.testimonial figcaption strong { display: block; color: var(--navy-2); }
+.testimonial figcaption small { color: var(--muted); font-size: .88rem; }
+
+/* À propos */
+.about-hero { padding: 90px 0 100px; }
+.about-hero h1 { max-width: 760px; }
+.about-text { max-width: 760px; margin-top: 26px; }
+.about-text p { font-size: 1.15rem; color: var(--text); line-height: 1.75; }
+.about-text strong.gold { color: var(--gold); }
+
+/* Prestations — bandeau avec photo */
+.page-hero .split-media img { height: 360px; }
+
+/* Tarifs — mention sans engagement */
+.pledge {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px;
+  padding: 10px 18px; border-radius: 999px; background: #fff; border: 1px solid var(--gold-2);
+  color: var(--navy); font-weight: 600; font-size: .95rem;
+}
+.pledge svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+
+/* Mentions légales — téléphone et email même couleur que le texte */
+.legal-table dd a { color: inherit; }
+.legal-table dd a:hover { color: var(--gold); }
+
+@media (max-width: 960px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 30px; }
+  .page-hero .split-media img { height: 280px; }
+}
+@media (max-width: 640px) {
+  .brand-name { font-size: 1.45rem; }
+  .pledge { border-radius: 16px; align-items: flex-start; }
+  .faq-photo img { height: 220px; }
+}
+.hero-badge { max-width: 300px; }
+@media (min-width: 760px) { .section-head .pledge { white-space: nowrap; } }
+
+
+/* =========================================================
+   Optimisation responsive — du petit téléphone au grand écran
+   ========================================================= */
+
+/* Formulaires : 16 px minimum pour éviter le zoom automatique sur iPhone */
+.field input, .field select, .field textarea { font-size: 16px; }
+
+/* Textes d'étiquettes : jamais sous 12 px */
+.value small, .tag, .card .sub, .ribbon, .legal-table dt,
+.info-strip .card small, .contact-list small { font-size: 12px; }
+
+/* Zones tactiles plus confortables, sans décaler la mise en page */
+.contact-list a, .info-strip .card .val, .map-link, .legal-table dd a,
+.card-link, .footer-bottom a, .consent a, .note a {
+  padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: -10px;
+}
+.site-footer ul { gap: 2px; }
+.site-footer ul a { display: inline-block; padding: 7px 0; }
+.footer-contact li { align-items: center; }
+.footer-contact svg { margin-top: 0; }
+
+/* Pas d'effet de survol « collant » sur écran tactile */
+@media (hover: none) {
+  .card:hover, .btn:hover, .btn-primary:hover, .btn-gold:hover { transform: none; box-shadow: none; }
+  .card:hover { border-color: var(--line); }
+}
+
+/* Tablettes : pas de carte orpheline dans les grilles de 3 */
+@media (min-width: 641px) and (max-width: 960px) {
+  .grid-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .hero-text { max-width: 680px; }
+  .section { padding: 80px 0; }
+}
+
+/* Téléphones */
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  .section-sm { padding: 48px 0; }
+  .page-hero { padding: 56px 0 64px; }
+  .about-hero { padding: 56px 0 64px; }
+  .section-head { margin-bottom: 32px; }
+  .hero-grid { padding-top: 32px; }
+
+  /* « Pour qui ? » : cartes compactes, icône à gauche */
+  .grid-4 > .card {
+    display: grid; grid-template-columns: 48px 1fr; column-gap: 16px; align-items: start;
+  }
+  .grid-4 > .card .icon-box { grid-row: span 2; }
+  .grid-4 > .card h3 { margin: 2px 0 4px; font-size: 1.3rem; }
+
+  /* Chiffres clés : compacts, sur une ligne */
+  .stat-row { gap: 12px; }
+  .stat {
+    display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px 22px;
+  }
+  .stat strong { font-size: 2rem; min-width: 96px; text-align: center; }
+
+  .cta-band { padding: 36px 22px; border-radius: 22px; }
+  .faq-item summary { font-size: 1.18rem; padding: 18px 40px 18px 0; }
+  .contact-hero { padding: 48px 0 80px; }
+  .contact-brand { margin-bottom: 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* Petits téléphones */
+@media (max-width: 480px) {
+  .hero-actions .btn, .cta-band .actions .btn { width: 100%; }
+  .cta-band .actions { width: 100%; }
+  .values { gap: 14px; }
+  .hero-badge { max-width: 240px; padding: 12px 14px; }
+  .hero-badge.hero-badge-alt { right: 12px; }
+  .hero-badge { left: 12px; }
+  .pledge { font-size: .9rem; }
+}
+
+/* Très petits téléphones (iPhone SE 1re gén., anciens Android) */
+@media (max-width: 360px) {
+  .container { padding: 0 14px; }
+  .hero-title { font-size: 1.85rem; }
+  h2 { font-size: 1.75rem; }
+  .brand-name { font-size: 1.3rem; }
+  .brand img { width: 40px; }
+  .brand { gap: 8px; }
+  .card { padding: 20px; }
+  .hero-visual figure { width: 88%; }
+  .hero-visual figure img { height: 380px; }
+  .hero-visual { min-height: 540px; }
+  .stat strong { font-size: 1.75rem; min-width: 84px; }
+  .legal-table dt, .legal-table dd { padding-left: 14px; padding-right: 14px; }
+}
+
+/* Grands écrans */
+@media (min-width: 1600px) {
+  :root { --container: 1280px; }
+  .section { padding: 110px 0; }
+  .hero-grid { min-height: 720px; }
+  .hero-visual figure { width: min(440px, 84%); }
+  .hero-visual figure img { height: 560px; }
+  .hero-title { font-size: 3.1rem; }
+}
+
+/* Très grands écrans (2K / 4K) */
+@media (min-width: 2200px) {
+  html { font-size: 112.5%; }
+  :root { --container: 1440px; }
+}
+
+
+/* =========================================================
+   Or véritable — même rendu doré métallique partout
+   ========================================================= */
+.hero-title em,
+.section-head h2 .gold, h2 .gold,
+.brand-name span,
+.nr span,
+.about-text strong.gold {
+  background: var(--gold-metal);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--gold);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding-right: .06em;
+}
+.site-footer .brand-name span,
+.site-footer .nr span,
+.contact-hero .nr span,
+.cta-band .nr span,
+.cta-band h2 em {
+  background: var(--gold-metal-light);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--gold-light);
+}
+.btn-gold { background: var(--gold-metal); background-size: 140% 100%; color: #fff; text-shadow: 0 1px 1px rgba(120, 85, 10, .35); }
+.btn-gold:hover { background-position: 100% 0; }
+.ribbon { background: var(--gold-metal); }
+.hero-badge strong .gold { color: var(--gold); }
+
+
+/* =========================================================
+   Dernières retouches client
+   ========================================================= */
+
+/* 1 — « Nath'Relais » lisible dans les petites lignes de titre */
+.eyebrow .nr { font-size: 1.7em; font-weight: 700; letter-spacing: 0; vertical-align: -0.08em; }
+.eyebrow .nr span, p .nr span, dd .nr span, .lead .nr span {
+  background: linear-gradient(105deg, #9c7314 0%, #c99a2e 45%, #a87b14 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* 2 — Titres de page (h1) plus discrets, texte en dessous mis en valeur */
+.page-hero h1, .about-hero h1 { font-size: clamp(1.9rem, 2.8vw, 2.5rem); line-height: 1.18; }
+.about-hero h1 { max-width: 920px; }
+.about-text { max-width: 860px; margin-top: 22px; }
+.about-text p { font-size: 1.2rem; }
+.page-hero p.lead { font-size: 1.12rem; color: var(--text); }
+
+/* 3 — Moins d'espace entre le haut de page et la suite */
+.page-hero, .about-hero { padding: 64px 0 60px; }
+.page-hero + .section { padding-top: 64px; }
+
+/* 7 — Email sur une seule ligne (page Contact) */
+.info-strip .card .val { word-break: normal; overflow-wrap: normal; white-space: nowrap; }
+@media (min-width: 1081px) {
+  .info-strip .grid-4 { grid-template-columns: 1.35fr 1fr 1.15fr 1fr; }
+}
+@media (min-width: 641px) and (max-width: 1080px) {
+  .info-strip .card .val { white-space: normal; }
+}
+
+/* 9 — Titre « Je m'occupe de l'administratif… » sur 2 lignes */
+.two-lines { font-size: clamp(1.8rem, 2.5vw, 2.3rem); text-wrap: balance; }
+
+/* 10 — Bandeau final : titre et phrase chacun sur une ligne */
+.cta-band.cta-stack { grid-template-columns: 1fr; gap: 26px; }
+.cta-band.cta-stack .actions { justify-content: flex-start; }
+.cta-band.cta-stack h2 { margin-bottom: 10px; }
+@media (min-width: 1000px) {
+  .cta-band.cta-stack h2, .cta-band.cta-stack p { white-space: nowrap; }
+}
+
+@media (max-width: 640px) {
+  .page-hero, .about-hero { padding: 48px 0 48px; }
+  .page-hero + .section { padding-top: 48px; }
+  .about-text p { font-size: 1.08rem; }
+  .info-strip .card .val { white-space: normal; overflow-wrap: anywhere; }
+}
+
+/* Hiérarchie des titres : h1 > h2 > h3 sur toutes les pages */
+h2 { font-size: clamp(1.7rem, 2.4vw, 2.2rem); }
+.two-lines { font-size: clamp(1.7rem, 2.4vw, 2.2rem); }
+.contact-brand + .contact-grid h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.eyebrow .nr { font-size: 2em; }
+@media (min-width: 1000px) {
+  .section-head .one-line { font-size: 2.2rem; }
 }
